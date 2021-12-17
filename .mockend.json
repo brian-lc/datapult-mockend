@@ -1,7 +1,22 @@
 {
-  "User": {
-    "title": {
-      "string": {}
+  "AuthToken": {
+    "token": {
+      "regexp": "[0-9][a-z]{30}"
+    },
+    "expires": {
+      "dateTime": {}
     }
+  },
+  "Card": {
+    "title": { "string": {} },
+    "shortCode": { "regexp": "[0-9][a-z]{10}" },
+    "published": { "dateTime": {} },
+    "belongsTo": "Image"
+  },
+  "Image": {
+    "CID":  { "regexp": "[0-9][a-z]{30}" },
+    "url": { "regexp": "https://ipfs\\.infura\\.io/CID/[0-9][a-z]{10}" },
+    "hasMany": "Card"
   }
+
 }
